@@ -5,9 +5,28 @@
   <img src="https://img.shields.io/badge/PyTorch-2.0+-red.svg" alt="PyTorch">
   <img src="https://img.shields.io/badge/PyQt6-6.0+-green.svg" alt="PyQt6">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+  <a href="https://youtu.be/giIbDXvCTaI"><img src="https://img.shields.io/badge/YouTube-Demo-red?logo=youtube" alt="YouTube Demo"></a>
 </p>
 
 An interactive **Deep Q-Network (DQN)** reinforcement learning simulation where an AI-powered car learns to navigate city maps, avoid obstacles, and reach multiple waypoints autonomously.
+
+---
+
+## 🎬 Demo Video
+
+<p align="center">
+  <a href="https://youtu.be/giIbDXvCTaI">
+    <img src="https://img.youtube.com/vi/giIbDXvCTaI/maxresdefault.jpg" alt="Watch Demo Video" width="600">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/giIbDXvCTaI">▶️ Watch the Full Demo on YouTube</a>
+</p>
+
+---
+
+## 🗺️ Sample Map
 
 ![Demo Preview](radial-map.png)
 
