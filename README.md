@@ -135,6 +135,44 @@ Where:
 
 ---
 
+## 📐 Bellman Equation Demo (`bellman_equation.py`)
+
+A standalone script demonstrating **iterative policy evaluation** using the Bellman equation on a 4×4 grid world.
+
+### Grid World Setup
+- **4×4 grid** with terminal state at bottom-right corner (3,3)
+- **Actions**: North, South, East, West (equal probability: 0.25 each)
+- **Rewards**: -1 for each step, 0 at terminal state
+- **Discount factor (γ)**: 1.0
+
+### How It Works
+
+The script iteratively updates the value function using:
+
+$$V(s) = \sum_{a} \pi(a|s) \left[ R(s,a) + \gamma V(s') \right]$$
+
+### Run the Demo
+```bash
+python bellman_equation.py
+```
+
+### Output (Converged Value Function)
+
+After iterating until convergence (θ = 1e-5), the value function converges to:
+
+```
+=======================
+-58.4281 -56.4281 -53.2853 -50.7139
+-56.4281 -53.5710 -48.7139 -44.1425
+-53.2853 -48.7139 -39.8568 -28.9998
+-50.7139 -44.1425 -28.9998  0.0000
+=======================
+```
+
+The values represent the **expected cumulative reward** from each state under a random policy. Notice how states closer to the terminal (bottom-right) have higher values (less negative).
+
+---
+
 ## ⚙️ Hyperparameters
 
 | Parameter | Value | Description |
