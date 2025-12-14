@@ -69,31 +69,31 @@ C_SENSOR_OFF= QColor("#BF616A") # Red
 # ==========================================
 CAR_WIDTH = 14     
 CAR_HEIGHT = 8   
-SENSOR_DIST = 1000  # FIX ME! Distance sensors look ahead (pixels) - Currently unrealistic!
+SENSOR_DIST = 10  # FIX ME! Distance sensors look ahead (pixels) - Currently unrealistic!
 SENSOR_ANGLE = 5    # FIX ME! Angle spread of sensors (degrees) - Too narrow!
-SPEED = 50          # FIX ME! Forward speed (pixels/step) - Way too fast!
-TURN_SPEED = 0.1    # FIX ME! Regular turn angle (degrees/step) - Too slow!
-SHARP_TURN = 5      # FIX ME! Sharp turn angle for tight corners (degrees) - Too small!
+SPEED = 5         # FIX ME! Forward speed (pixels/step) - Way too fast!
+TURN_SPEED = 10    # FIX ME! Regular turn angle (degrees/step) - Too slow!
+SHARP_TURN = 40      # FIX ME! Sharp turn angle for tight corners (degrees) - Too small!
 
 # ==========================================
 # REINFORCEMENT LEARNING HYPERPARAMETERS - FIX ME!
 # ==========================================
-BATCH_SIZE = 2      # FIX ME! Number of experiences sampled per training step - Too small!
+BATCH_SIZE = 256      # FIX ME! Number of experiences sampled per training step - Too small!
                     # Hint: Typically 32-512 for stability
 
-GAMMA = 0.01        # FIX ME! Discount factor for future rewards (0 to 1)
+GAMMA = 0.9        # FIX ME! Discount factor for future rewards (0 to 1)
                     # Too low - agent won't care about future!
                     # Hint: Usually 0.9-0.99
 
-LR = 1.0            # FIX ME! Learning rate for neural network optimizer
+LR = 0.0001           # FIX ME! Learning rate for neural network optimizer
                     # Way too high - will cause instability!
                     # Hint: Usually 0.0001 to 0.01
 
-TAU = 0.9           # FIX ME! Polyak averaging coefficient for soft target updates
+TAU = 0.001           # FIX ME! Polyak averaging coefficient for soft target updates
                     # Too high - defeats the purpose of target network!
                     # Hint: Usually 0.001 to 0.01
 
-MAX_CONSECUTIVE_CRASHES = 100  # FIX ME! Reset after this many crashes
+MAX_CONSECUTIVE_CRASHES = 5  # FIX ME! Reset after this many crashes
                                # Too high - will waste time on bad configs
                                # Hint: Usually 2-10
 
@@ -151,7 +151,7 @@ class CarBrain:
         self.episode_scores = deque(maxlen=100)  # Track recent episode scores
         
         self.steps = 0
-        self.epsilon = 0.01  # FIX ME! Exploration rate - starts too low! 
+        self.epsilon = 1  # FIX ME! Exploration rate - starts too low! 
                              # Hint: Usually starts at 1.0 (100% exploration)
         self.consecutive_crashes = 0
         
